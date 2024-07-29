@@ -89,4 +89,13 @@ function slideIndicator(toIndex) {
 
   dotActive.classList.remove("carousel_dot__active");
   newDotActive.classList.add("carousel_dot__active");
+
+  document.querySelectorAll("ul a").forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
 }
